@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Pricing from "./pages/pricing";
-import Product from "./pages/product";
-import HomePage from "./pages/HomePage";
+import Pricing from "./pages/Pricing";
+import Product from "./pages/Product";
+import HomePage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
-import "./index.css";
+
 import AppLayout from "./pages/AppLayout";
+import Login from "./pages/Login";
 
 
 function App(){
@@ -17,6 +18,7 @@ function App(){
             <Route path="product" element={<Product/>}/>
             <Route path="/" element={<HomePage/>}/>
             <Route path="app" element={<AppLayout/>}/>
+            <Route path="/login" element={<Login/>}/>
             <Route path="*" element={<PageNotFound/>}/>
             </Routes>
          </BrowserRouter>
