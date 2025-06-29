@@ -6,6 +6,7 @@ import PageNotFound from "./pages/PageNotFound";
 
 import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
+import CityList from "./components/CityList";
 
 
 function App(){
@@ -14,10 +15,17 @@ function App(){
    
          <BrowserRouter>
            <Routes>
+            <Route index element={<HomePage/>}/>
             <Route path="pricing" element={<Pricing/>}/>
             <Route path="product" element={<Product/>}/>
-            <Route path="/" element={<HomePage/>}/>
-            <Route path="app" element={<AppLayout/>}/>
+            
+            <Route path="app" element={<AppLayout/>}>
+               <Route index element={<CityList/>}/>
+               <Route path="cities" element={<CityList/>}/>
+               <Route path="countries" element={<p>countries</p>}/>
+               <Route path="form" element={<p>form</p>}/>
+
+            </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="*" element={<PageNotFound/>}/>
             </Routes>
